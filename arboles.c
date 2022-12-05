@@ -23,7 +23,7 @@ struct nodo* nuevoNodo(int dato){ //Uso de la estructura
   return nuevo_nodo;
 }
 
-void insertarNodo(struct nodo* nd, int dato){
+void insertarNodo(struct nodo* nd, int dato){ //Para insertar nuevos nodos
   if(dato > nd->dato){
     if(nd->hijo_der == NULL){
       nd->hijo_der = nuevoNodo(dato);
@@ -39,7 +39,7 @@ void insertarNodo(struct nodo* nd, int dato){
   }
 }
 
-int rastreo(struct nodo* nd, int dato, int nivel){
+int rastreo(struct nodo* nd, int dato, int nivel){ //Rastrea el numero por los niveles
   if(nd == NULL)
 	  return 0;
   if(nd->dato == dato)
@@ -50,7 +50,7 @@ int rastreo(struct nodo* nd, int dato, int nivel){
   nuevo_nivel = rastreo(nd->hijo_der, dato, nivel + 1);
 }
 
-int buscar(struct nodo* nd, int dato){
+int buscar(struct nodo* nd, int dato){ //Busca desde el nivel 1
   return rastreo(nd, dato, 1);
 }
 
@@ -77,7 +77,7 @@ void postorden(struct nodo* raiz){
   }
 }
 
-int main(){
+int main(){ //Funcion principal
   struct nodo* raiz = NULL;
   raiz = nuevoNodo(28);
   insertarNodo(raiz, 11);
@@ -115,6 +115,8 @@ int main(){
   return 0;
 }
 
+
+//Notas: dibujo del arbol
 //
 //         1                  28
 //                         /      \                .                            
