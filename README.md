@@ -1,2 +1,2 @@
 # 3ra_Parcial
-EValuación 3ra parcial
+Evaluación 3ra parcial
